@@ -30,6 +30,9 @@
     <ClCompile Include="Libro.cpp">
       <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lista.h">
@@ -45,6 +48,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Libro.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="rlutil.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
