@@ -54,7 +54,8 @@ bool Libro::isPrestado() {
 
 string Libro::toString()
 {
-    string aux;
+    string aux = "";
+
     if (prestado = true) {
         aux = "Prestado";
     }

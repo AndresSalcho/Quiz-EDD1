@@ -6,7 +6,15 @@
 
 using namespace std;
 
-void run() {
+menu::menu() {
+
+}
+
+menu::~menu() {
+
+}
+
+void menu::run() {
 
 	string ez1, ez2, ez3, ez4, rec, ver;
 	int op = 1, y = 1, cursor;

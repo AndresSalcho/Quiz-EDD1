@@ -128,7 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Libro.cpp" />
-    <ClCompile Include="listaEN.cpp" />
+    <ClCompile Include="listaLibros.cpp" />
+    <ClCompile Include="listaPersona.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="Persona.cpp" />
@@ -136,10 +137,12 @@
   <ItemGroup>
     <ClInclude Include="Libro.h" />
     <ClInclude Include="lista.h" />
-    <ClInclude Include="listaEN.h" />
+    <ClInclude Include="listaLibros.h" />
+    <ClInclude Include="listaPersona.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="nodo.h" />
     <ClInclude Include="Persona.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="rlutil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

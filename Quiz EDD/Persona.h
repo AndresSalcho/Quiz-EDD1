@@ -1,5 +1,4 @@
 #include <string>
-#include "listaEN.h"
 #include "Libro.h"
 
 using namespace std;

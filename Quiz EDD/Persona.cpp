@@ -1,6 +1,9 @@
 #include "Persona.h"
 
 Persona::Persona() {
+	Nombre = "";
+	Apellidos = "";
+	Cedula = "";
 }
 
 Persona::~Persona() {
