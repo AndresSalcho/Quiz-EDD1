@@ -1,7 +1,7 @@
 #pragma once
 #include "lista.h"
 #include <sstream>
-#include "Libro.h"
+#include "listaPersona.h"
 
 class listaLibros
 {

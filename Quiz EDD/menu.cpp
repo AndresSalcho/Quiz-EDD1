@@ -14,13 +14,6 @@ menu::~menu() {
 
 }
 
-#include "rlutil.h"
-#include <random>
-#include <regex>
-#include <sstream>
-
-using namespace std;
-
 bool menu::validarNumero(const std::string& hijos) {
 	std::regex formato("^([0-9]|[1-3][0-9]|40)$");
 	if (std::regex_match(hijos, formato)) {
@@ -61,6 +54,9 @@ void menu::run() {
 	ez4 = (char)188;
 	rec = (char)205;
 	ver = (char)186;
+
+	listaPersona lp;
+
 	rlutil::hidecursor();
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::random_device rd;
@@ -326,6 +322,7 @@ void menu::run() {
 
 				rlutil::locate(15, 25);
 
+				lp.Guardar("../persona.dat");
 				op = 0;
 				break;
 			}

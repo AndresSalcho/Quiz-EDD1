@@ -1,12 +1,12 @@
 #include "Libro.h"
 
-Libro::Libro() {
-    this->nombre = "libro";
-    this->id = "";
-    this->autor = "";
-    this->anio = "";
-    this->editorial = "";
-    this->prestado = false;
+Libro::Libro(string id, string nom, string aut, string edi, string ani, bool pres) {
+    this->nombre = nom;
+    this->id = id;
+    this->autor = aut;
+    this->anio = ani;
+    this->editorial = edi;
+    this->prestado = pres;
 }
 
 Libro::~Libro()

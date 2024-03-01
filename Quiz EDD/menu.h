@@ -1,4 +1,8 @@
 #pragma once
+#include <string>
+#include "listaLibros.h"
+
+
 class menu{
 public:
 	menu();
