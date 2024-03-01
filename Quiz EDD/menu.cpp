@@ -52,6 +52,7 @@ void menu::run() {
 
 	string Cedula, Nombre, Apellido, CantidadLibros, modCedula;
 	string idLibro, Autor, NombreLibro, Fecha, AgregarLibro;
+	string auxLibros;
 	string ez1, ez2, ez3, ez4, rec, ver;
 	int op = 1, y = 1, cursor, i, auxCantidadLibros;
 
@@ -209,7 +210,10 @@ void menu::run() {
 						getline(cin, AgregarLibro);
 					} while (validarVacio(AgregarLibro));
 
+					auxLibros = auxLibros + " , " + AgregarLibro;
+
 				}
+				auxLibros = "";
 
 				rlutil::locate(15, 30);
 				system("pause");
