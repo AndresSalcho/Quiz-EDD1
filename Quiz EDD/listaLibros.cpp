@@ -24,7 +24,7 @@ Libro* listaLibros::getbyID(string s) {
 	lista<Libro*> aux = ListaP;
 	bool found = false;
 
-	Libro* temp = new Libro();
+	Libro* temp = new Libro("","","","","",true);
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -42,7 +42,7 @@ bool listaLibros::checkbyID(string s) {
 	bool found = false;
 	bool res;
 
-	Libro* temp = new Libro();
+	Libro* temp = new Libro("", "", "", "", "", true);
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {

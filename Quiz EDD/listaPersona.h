@@ -1,7 +1,8 @@
 #pragma once
 #include "lista.h"
-#include <sstream>
 #include "Persona.h"
+#include <sstream>
+#include <fstream>
 
 class listaPersona
 {
@@ -16,5 +17,6 @@ public:
 	void update(Persona* old, Persona* nuevo);
 	Persona* getbyID(string);
 	bool checkbyID(string);
+	virtual void Guardar(string);
 };
 

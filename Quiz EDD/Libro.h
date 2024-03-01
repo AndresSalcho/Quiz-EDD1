@@ -14,7 +14,8 @@ private:
     bool prestado;
 
 public:
-    Libro();
+
+    Libro(string id, string nombre, string autor, string editorial, string anio, bool prestado);
     ~Libro();
 
     string getAnio();
