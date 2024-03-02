@@ -1,10 +1,10 @@
 #include "Persona.h"
 
-Persona::Persona(string id, string n, string ap){
+Persona::Persona(string id, string n, string ap, string l) {
 	this->Nombre = n;
 	this->Apellidos = ap;
 	this->Cedula = id;
-	this->Libros = NULL;
+	this->Libros = l;
 }
 
 Persona::~Persona() {
@@ -19,7 +19,7 @@ void Persona::setApellidos(string a) {
 void Persona::setCedula(string c) {
 	this->Cedula = c;
 }
-void Persona::setLibros(Libro* l) {
+void Persona::setLibros(string l) {
 	this->Libros = l;
 }
 
@@ -32,10 +32,11 @@ string Persona::getApellidos() {
 string Persona::getCedula() {
 	return Cedula;
 }
-Libro* Persona::getLibros() {
+string Persona::getLibros() {
 	return Libros;
 }
 
-string Persona::toString() {
-	return "Cedula: " + this->Cedula + " Nombre: " + this->Nombre + " Apellidos: " + this->Apellidos;
+string Persona::toString(listaLibros ll) {
+	return "Cedula: " + this->Cedula + "\nNombre: " + this->Nombre + "\nApellidos: " + this->Apellidos + "\n\nLibros: \n\n" + ll.readBooks(Libros);
+
 }

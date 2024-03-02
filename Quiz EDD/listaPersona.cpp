@@ -24,7 +24,7 @@ Persona* listaPersona::getbyID(string s) {
 	lista<Persona*> aux = ListaP;
 	bool found = false;
 
-	Persona* temp = new Persona("","","");
+	Persona* temp = new Persona("", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -37,12 +37,29 @@ Persona* listaPersona::getbyID(string s) {
 	return temp;
 }
 
+void listaPersona::printAll(listaLibros ll) {
+	lista<Persona*> aux = ListaP;
+	bool found = false;
+
+	Persona* temp = new Persona("", "", "", "");
+	while (!found) {
+		temp = aux.popItem();
+		if (temp == NULL) {
+			found = true;
+		}
+		else {
+			cout << temp->toString(ll);
+		}
+
+	}
+}
+
 bool listaPersona::checkbyID(string s) {
 	lista<Persona*> aux = ListaP;
 	bool found = false;
 	bool res;
 
-	Persona* temp = new Persona("","","");
+	Persona* temp = new Persona("", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -55,18 +72,5 @@ bool listaPersona::checkbyID(string s) {
 		}
 	}
 	return res;
-}
-
-void listaPersona::Guardar(string ruta) {
-	ofstream out(ruta, ios::out | ios::binary);
-	lista<Persona*> aux = ListaP;
-	Persona* temp = aux.popItem();
-	do {
-		out.write((char*)&temp, sizeof(temp));
-		Persona* temp = aux.popItem();
-
-	} while (temp == NULL);
-
-	cout << "Guardado con exito";
 }
 

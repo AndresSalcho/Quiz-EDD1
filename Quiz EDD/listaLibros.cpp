@@ -1,6 +1,7 @@
 #include "listaLibros.h"
 
 listaLibros::listaLibros() {
+	cantidadLibros = 0;
 }
 
 listaLibros::~listaLibros() {
@@ -8,11 +9,13 @@ listaLibros::~listaLibros() {
 }
 
 void listaLibros::add(Libro* e) {
-	ListaP.agregarFinal(e);
+	ListaL.agregarFinal(e);
+	cantidadLibros++;
 }
 
 void listaLibros::del(Libro* e) {
-	ListaP.borrar(e);
+	ListaL.borrar(e);
+	cantidadLibros--;
 }
 
 void listaLibros::update(Libro* old, Libro* nuevo) {
@@ -21,10 +24,10 @@ void listaLibros::update(Libro* old, Libro* nuevo) {
 }
 
 Libro* listaLibros::getbyID(string s) {
-	lista<Libro*> aux = ListaP;
+	lista<Libro*> aux = ListaL;
 	bool found = false;
 
-	Libro* temp = new Libro("","","","","",true);
+	Libro* temp = new Libro("", "", "", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -37,12 +40,29 @@ Libro* listaLibros::getbyID(string s) {
 	return temp;
 }
 
+void listaLibros::printAll() {
+	lista<Libro*> aux = ListaL;
+	bool found = false;
+
+	Libro* temp = new Libro("", "", "", "", "", "");
+
+	while (!found) {
+		temp = aux.popItem();
+		if (temp == NULL) {
+			found = true;
+		}
+		else {
+			cout << temp->toString();
+		}
+	}
+}
+
 bool listaLibros::checkbyID(string s) {
-	lista<Libro*> aux = ListaP;
+	lista<Libro*> aux = ListaL;
 	bool found = false;
 	bool res;
 
-	Libro* temp = new Libro("", "", "", "", "", true);
+	Libro* temp = new Libro("", "", "", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -55,4 +75,43 @@ bool listaLibros::checkbyID(string s) {
 		}
 	}
 	return res;
+}
+
+string listaLibros::readBooks(string b) {
+
+	vector<string> result;
+	istringstream iss(b);
+	string token;
+	Libro* temp;
+	int counter = 0;
+
+	while (getline(iss, token, '/')) {
+
+		if (counter != 0) {
+			result.push_back(token);
+		}else{
+			counter++;
+		}
+
+	}
+
+	token = "";
+
+	for (const std::string& tk : result) {
+		temp = new Libro("", "", "", "", "", "");
+		temp = getbyID(tk);
+
+		token = token + "ID: " + temp->getid() + "\nNombre: " + temp->getNombre() + "\n\n";
+	}
+
+	return token;
+}
+
+bool listaLibros::isEmpty() {
+
+	return ListaL.isEmpty();
+}
+
+int listaLibros::Size() {
+	return cantidadLibros;
 }

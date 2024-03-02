@@ -1,8 +1,7 @@
 #include "menu.h"
 #include "rlutil.h"
 #include <random>
-#include <regex>
-#include <sstream>
+#include "listaPersona.h"
 
 using namespace std;
 //HOLA SALCHI
@@ -44,11 +43,15 @@ bool menu::validarVacio(const std::string& blanco) {
 
 void menu::run() {
 
-	string Cedula, Nombre, Apellido, CantidadLibros, modCedula;
+	string Cedula, Nombre, Apellido, CantidadLibros, Editorial, modCedula;
 	string idLibro, Autor, NombreLibro, Fecha, AgregarLibro;
 	string auxLibros;
 	string ez1, ez2, ez3, ez4, rec, ver;
 	int op = 1, y = 1, cursor, i, auxCantidadLibros;
+
+	const string rutaP = "../personas.dat";
+	const string rutaL = "../libros.dat";
+
 
 	ez1 = (char)201;
 	ez2 = (char)187;
@@ -58,11 +61,33 @@ void menu::run() {
 	ver = (char)186;
 
 	listaPersona lp;
+	listaLibros ll;
+
+	Persona* p;
+	Libro* l;
 
 	rlutil::hidecursor();
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::random_device rd;
 	std::uniform_int_distribution<int> dist(2500, 15000);
+
+	try {
+		lp.deserializeList(rutaP);
+	}
+	catch (exception e) {
+		cout << "No hay archivos de persona, se crearan unos nuevos\n\n";
+		system("pause");
+		system("cls");
+	}
+
+	try {
+		ll.deserializeList(rutaL);
+	}
+	catch (exception e) {
+		cout << "No hay archivos de libro, se crearan unos nuevos\n\n";
+		system("pause");
+		system("cls");
+	}
 
 	do {
 
@@ -117,102 +142,120 @@ void menu::run() {
 			switch (y) {
 			case 1:
 				system("cls");
-				rlutil::showcursor();
 
-				rlutil::locate(15, 5);
-				cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2 << endl;
-				rlutil::locate(15, 6);
-				cout << ver << "  Digite la cedula:                                               " << ver << endl;
-				rlutil::locate(15, 7);
-				cout << ver << "  Digite el nombre:                                               " << ver << endl;
-				rlutil::locate(15, 8);
-				cout << ver << "  Digite el apellido:                                             " << ver << endl;
-				rlutil::locate(15, 9);
-				cout << ver << "  Digite la cantidad de libros:                                   " << ver << endl;
-				rlutil::locate(15, 10);
-				cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4 << endl;
+				if (!ll.isEmpty()) {
+					rlutil::showcursor();
 
-				do {
-					rlutil::locate(38, 6);
-					cout << "                                " << endl;
-					rlutil::locate(36, 6);
-					rlutil::setColor(rlutil::color::LIGHTBLUE);
-					cout << (char)175 << endl;
-					rlutil::setColor(rlutil::color::WHITE);
-					rlutil::locate(38, 6);
-					getline(cin, Cedula);
-				} while (validarCedula(Cedula));
-
-				rlutil::locate(36, 6);
-				cout << " " << endl;
-
-				do {
-					rlutil::locate(38, 7);
-					cout << "                                " << endl;
-					rlutil::locate(36, 7);
-					rlutil::setColor(rlutil::color::LIGHTBLUE);
-					cout << (char)175 << endl;
-					rlutil::setColor(rlutil::color::WHITE);
-					rlutil::locate(38, 7);
-					getline(cin, Nombre);
-				} while (validarVacio(Nombre));
-
-				rlutil::locate(36, 7);
-				cout << " " << endl;
-
-				do {
-					rlutil::locate(40, 8);
-					cout << "                                " << endl;
-					rlutil::locate(38, 8);
-					rlutil::setColor(rlutil::color::LIGHTBLUE);
-					cout << (char)175 << endl;
-					rlutil::setColor(rlutil::color::WHITE);
-					rlutil::locate(40, 8);
-					getline(cin, Apellido);
-				} while (validarVacio(Apellido));
-
-				rlutil::locate(38, 8);
-				cout << " " << endl;
-
-				do {
-					rlutil::locate(50, 9);
-					cout << "                                " << endl;
-					rlutil::locate(48, 9);
-					rlutil::setColor(rlutil::color::LIGHTBLUE);
-					cout << (char)175 << endl;
-					rlutil::setColor(rlutil::color::WHITE);
-					rlutil::locate(50, 9);
-					getline(cin, CantidadLibros);
-				} while (validarNumero(CantidadLibros));
-
-				rlutil::locate(48, 9);
-				cout << " " << endl;
-
-				auxCantidadLibros = stoi(CantidadLibros);
-
-				rlutil::locate(15, 12);
-				rlutil::setColor(rlutil::color::WHITE);
-				cout << "Digite los nombres de los libros:" << endl;
-
-				for (i = 1; i <= auxCantidadLibros; i++) {
+					rlutil::locate(15, 5);
+					cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2 << endl;
+					rlutil::locate(15, 6);
+					cout << ver << "  Digite la cedula:                                               " << ver << endl;
+					rlutil::locate(15, 7);
+					cout << ver << "  Digite el nombre:                                               " << ver << endl;
+					rlutil::locate(15, 8);
+					cout << ver << "  Digite el apellido:                                             " << ver << endl;
+					rlutil::locate(15, 9);
+					cout << ver << "  Digite la cantidad de libros:                                   " << ver << endl;
+					rlutil::locate(15, 10);
+					cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4 << endl;
 
 					do {
-						rlutil::locate(18, 13 + i);
+						rlutil::locate(38, 6);
 						cout << "                                " << endl;
-						rlutil::locate(15, 13 + i);
+						rlutil::locate(36, 6);
 						rlutil::setColor(rlutil::color::LIGHTBLUE);
-						cout << i << " " << (char)175 << endl;
+						cout << (char)175 << endl;
 						rlutil::setColor(rlutil::color::WHITE);
-						rlutil::locate(18, 13 + i);
-						getline(cin, AgregarLibro);
-					} while (validarVacio(AgregarLibro));
+						rlutil::locate(38, 6);
+						getline(cin, Cedula);
+					} while (validarCedula(Cedula) or lp.checkbyID(Cedula));
 
-					auxLibros = auxLibros + " , " + AgregarLibro;
+					rlutil::locate(36, 6);
+					cout << " " << endl;
+
+					do {
+						rlutil::locate(38, 7);
+						cout << "                                " << endl;
+						rlutil::locate(36, 7);
+						rlutil::setColor(rlutil::color::LIGHTBLUE);
+						cout << (char)175 << endl;
+						rlutil::setColor(rlutil::color::WHITE);
+						rlutil::locate(38, 7);
+						getline(cin, Nombre);
+					} while (validarVacio(Nombre));
+
+					rlutil::locate(36, 7);
+					cout << " " << endl;
+
+					do {
+						rlutil::locate(40, 8);
+						cout << "                                " << endl;
+						rlutil::locate(38, 8);
+						rlutil::setColor(rlutil::color::LIGHTBLUE);
+						cout << (char)175 << endl;
+						rlutil::setColor(rlutil::color::WHITE);
+						rlutil::locate(40, 8);
+						getline(cin, Apellido);
+					} while (validarVacio(Apellido));
+
+					rlutil::locate(38, 8);
+					cout << " " << endl;
+
+					do {
+						rlutil::locate(50, 9);
+						cout << "                                " << endl;
+						rlutil::locate(48, 9);
+						rlutil::setColor(rlutil::color::LIGHTBLUE);
+						cout << (char)175 << endl;
+						rlutil::setColor(rlutil::color::WHITE);
+						rlutil::locate(50, 9);
+						getline(cin, CantidadLibros);
+					} while (validarNumero(CantidadLibros) or CantidadLibros == "0" or stoi(CantidadLibros) > ll.Size());
+
+					rlutil::locate(48, 9);
+					cout << " " << endl;
+
+					auxCantidadLibros = stoi(CantidadLibros);
+
+					rlutil::locate(15, 12);
+					rlutil::setColor(rlutil::color::WHITE);
+					cout << "Digite los codigos de los libros:" << endl;
+
+					for (i = 1; i <= auxCantidadLibros; i++) {
+
+						do {
+							rlutil::locate(18, 13 + i);
+							cout << "                                " << endl;
+							rlutil::locate(15, 13 + i);
+							rlutil::setColor(rlutil::color::LIGHTBLUE);
+							cout << i << " " << (char)175 << endl;
+							rlutil::setColor(rlutil::color::WHITE);
+							rlutil::locate(18, 13 + i);
+							getline(cin, AgregarLibro);
+						} while (validarVacio(AgregarLibro) or !ll.checkbyID(AgregarLibro));
+
+						auxLibros = auxLibros + "/" + AgregarLibro;
+
+					}
+
+					p = new Persona(Cedula, Nombre, Apellido, auxLibros);
+					lp.add(p);
+
+					rlutil::hidecursor();
+
+				}else {
+
+					rlutil::setColor(rlutil::color::RED);
+					rlutil::locate(15, 7);
+					cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2;
+					rlutil::locate(15, 8);
+					cout << ver << " ! Debe agregar libros primero ! " << ver;
+					rlutil::locate(15, 9);
+					cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4;
+					rlutil::setColor(rlutil::color::WHITE);
 
 				}
-				auxLibros = "";
 
-				rlutil::hidecursor();
 				rlutil::locate(15, 30);
 				system("pause");
 				system("cls");
@@ -230,8 +273,10 @@ void menu::run() {
 				rlutil::locate(15, 8);
 				cout << ver << "  Digite Autor:                                                   " << ver << endl;
 				rlutil::locate(15, 9);
-				cout << ver << "  Digite el A" << (char)164 << "o:                                                  " << ver << endl;
+				cout << ver << "  Digite Editorial:                                               " << ver << endl;
 				rlutil::locate(15, 10);
+				cout << ver << "  Digite el A" << (char)164 << "o:                                                  " << ver << endl;
+				rlutil::locate(15, 11);
 				cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4 << endl;
 
 				do {
@@ -243,7 +288,7 @@ void menu::run() {
 					rlutil::setColor(rlutil::color::WHITE);
 					rlutil::locate(38, 6);
 					getline(cin, idLibro);
-				} while (validarVacio(idLibro));
+				} while (validarVacio(idLibro) or ll.checkbyID(idLibro));
 
 				do {
 					rlutil::locate(38, 7);
@@ -275,8 +320,22 @@ void menu::run() {
 					cout << (char)175 << endl;
 					rlutil::setColor(rlutil::color::WHITE);
 					rlutil::locate(38, 9);
+					getline(cin, Editorial);
+				} while (validarVacio(Editorial));
+
+				do {
+					rlutil::locate(38, 10);
+					cout << "                                " << endl;
+					rlutil::locate(36, 10);
+					rlutil::setColor(rlutil::color::LIGHTBLUE);
+					cout << (char)175 << endl;
+					rlutil::setColor(rlutil::color::WHITE);
+					rlutil::locate(38, 10);
 					getline(cin, Fecha);
 				} while (validarVacio(Fecha));
+
+				l = new Libro(idLibro, NombreLibro, Autor, Editorial, Fecha, "0");
+				ll.add(l);
 
 				rlutil::hidecursor();
 				rlutil::locate(15, 30);
@@ -294,6 +353,10 @@ void menu::run() {
 				cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4;
 				rlutil::locate(15, 6);
 
+				cout << "\n\n------------------Personas------------------\n\n";
+				lp.printAll(ll);
+				cout << "-------------------Libros-------------------\n\n";
+				ll.printAll();
 
 				rlutil::hidecursor();
 				rlutil::locate(15, 30);
@@ -307,7 +370,7 @@ void menu::run() {
 				rlutil::locate(15, 2);
 				cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2;
 				rlutil::locate(15, 3);
-				cout << ver << " Digite cedula del empleado:                                                              " << ver;
+				cout << ver << " Digite cedula del cliente:                                                               " << ver;
 				rlutil::locate(15, 4);
 				cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4;
 
@@ -319,6 +382,23 @@ void menu::run() {
 				getline(cin, modCedula);
 				rlutil::locate(45, 3);
 				cout << "  " << endl;
+
+				if (lp.checkbyID(modCedula)) { 
+					p = lp.getbyID(modCedula);
+					cout << "\n\n" + p->toString(ll);
+				}
+				else {
+
+					rlutil::setColor(rlutil::color::RED);
+					rlutil::locate(15, 7);
+					cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2;
+					rlutil::locate(15, 8);
+					cout << ver << " ! Cedula no existe ! " << ver;
+					rlutil::locate(15, 9);
+					cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4;
+					rlutil::setColor(rlutil::color::WHITE);
+
+				}
 
 				rlutil::hidecursor();
 				rlutil::locate(15, 30);
@@ -337,7 +417,17 @@ void menu::run() {
 
 				rlutil::locate(15, 25);
 
-				lp.Guardar("../persona.dat");
+				try {
+					remove("../personas.dat");
+					remove("../libros.dat");
+				}
+				catch (exception e) {
+
+				}
+
+				lp.serializeList("../personas.dat");
+				ll.serializeList("../libros.dat");
+
 				op = 0;
 				break;
 			}
