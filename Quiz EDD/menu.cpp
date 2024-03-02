@@ -44,6 +44,10 @@ bool menu::validarVacio(const std::string& blanco) {
 
 void menu::run() {
 
+	string const rutaP = "../Personas.dat";
+	string const rutaL = "../Libros.dat";
+
+
 	string Cedula, Nombre, Apellido, CantidadLibros, modCedula;
 	string idLibro, Autor, NombreLibro, Fecha, AgregarLibro;
 	string auxLibros;
@@ -58,6 +62,9 @@ void menu::run() {
 	ver = (char)186;
 
 	listaPersona lp;
+	listaLibros ll;
+	Persona* p;
+	Libro* l;
 
 	rlutil::hidecursor();
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -207,10 +214,11 @@ void menu::run() {
 						getline(cin, AgregarLibro);
 					} while (validarVacio(AgregarLibro));
 
-					auxLibros = auxLibros + " , " + AgregarLibro;
+					auxLibros = auxLibros + "/" + AgregarLibro;
 
 				}
-				auxLibros = "";
+				p = new Persona(Cedula, Nombre, Apellido, auxLibros);
+				lp.add(p);
 
 				rlutil::locate(15, 30);
 				system("pause");
@@ -327,6 +335,7 @@ void menu::run() {
 
 				rlutil::locate(15, 25);
 
+				lp.serializeList(rutaP);
 				op = 0;
 				break;
 			}
