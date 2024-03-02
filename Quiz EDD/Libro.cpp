@@ -1,6 +1,6 @@
 #include "Libro.h"
 
-Libro::Libro(string id, string nom, string aut, string edi, string ani, string pres) {
+Libro::Libro(string id, string nom, string aut, string edi, string ani, bool pres) {
     this->nombre = nom;
     this->id = id;
     this->autor = aut;
@@ -29,7 +29,7 @@ void Libro::setAnio(string a) {
     this->anio = a;
 }
 
-void Libro::setPrestamo(string b) {
+void Libro::setPrestamo(bool b) {
     this->prestado = b;
 }
 
@@ -49,20 +49,14 @@ string Libro::getAnio() {
     return anio;
 }
 bool Libro::isPrestado() {
-    if (prestado == "1") {
-        return true;
-    }
-    else {
-        return false;
-    }
-    
+    return prestado;
 }
 
 string Libro::toString()
 {
     string aux = "";
 
-    if (prestado == "1") {
+    if (prestado = true) {
         aux = "Prestado";
     }
     else {
