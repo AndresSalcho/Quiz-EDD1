@@ -327,7 +327,6 @@ void menu::run() {
 
 				rlutil::locate(15, 25);
 
-				lp.Guardar("../persona.dat");
 				op = 0;
 				break;
 			}

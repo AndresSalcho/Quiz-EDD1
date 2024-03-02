@@ -17,6 +17,38 @@ public:
 	void update(Persona* old, Persona* nuevo);
 	Persona* getbyID(string);
 	bool checkbyID(string);
-	virtual void Guardar(string);
+
+    void serializeList(const string& filename) {
+        Persona* aux;
+        bool done = false;
+        ofstream ofs(filename, ios::binary);
+        if (!ofs) {
+            throw std::runtime_error("No se pudo abrir el archivo");
+        }
+        do {
+            aux = ListaP.popItem();
+            if (aux == NULL) {
+                done = true;
+            }
+            else {
+                aux->serialize(ofs);
+            }
+        } while (!done);
+    }
+
+    void deserializeList(const string& filename) {
+        ifstream ifs(filename, ios::binary);
+        if (!ifs) {
+            throw std::runtime_error("No se pudo abrir el archivo");
+        }
+
+        while (ifs) {
+            Persona* p = new Persona("", "", "", "");
+            p->deserialize(ifs);
+            if (ifs) {
+                ListaP.agregarFinal(p);
+            }
+        }
+    }
 };
 

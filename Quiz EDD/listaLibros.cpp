@@ -8,11 +8,11 @@ listaLibros::~listaLibros() {
 }
 
 void listaLibros::add(Libro* e) {
-	ListaP.agregarFinal(e);
+	ListaL.agregarFinal(e);
 }
 
 void listaLibros::del(Libro* e) {
-	ListaP.borrar(e);
+	ListaL.borrar(e);
 }
 
 void listaLibros::update(Libro* old, Libro* nuevo) {
@@ -21,10 +21,10 @@ void listaLibros::update(Libro* old, Libro* nuevo) {
 }
 
 Libro* listaLibros::getbyID(string s) {
-	lista<Libro*> aux = ListaP;
+	lista<Libro*> aux = ListaL;
 	bool found = false;
 
-	Libro* temp = new Libro("","","","","",true);
+	Libro* temp = new Libro("", "", "", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {
@@ -38,11 +38,11 @@ Libro* listaLibros::getbyID(string s) {
 }
 
 bool listaLibros::checkbyID(string s) {
-	lista<Libro*> aux = ListaP;
+	lista<Libro*> aux = ListaL;
 	bool found = false;
 	bool res;
 
-	Libro* temp = new Libro("", "", "", "", "", true);
+	Libro* temp = new Libro("", "", "", "", "", "");
 	while (!found) {
 		temp = aux.popItem();
 		if (temp == NULL) {

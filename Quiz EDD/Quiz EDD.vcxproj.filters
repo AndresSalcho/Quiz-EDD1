@@ -16,6 +16,9 @@
     <Filter Include="Archivos de encabezado\ListaEnlazada">
       <UniqueIdentifier>{74f20d6e-505d-4a4d-8d78-549e2bca0b25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Cereal">
+      <UniqueIdentifier>{fb494ed8-947d-4a3e-af1a-3082e25d763b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,5 +68,265 @@
     <ClInclude Include="listaLibros.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\access.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\archives\adapters.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\archives\binary.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\archives\json.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\archives\portable_binary.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\archives\xml.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\cereal.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\helpers.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\polymorphic_impl.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\polymorphic_impl_fwd.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\static_object.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\traits.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\details\util.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\base64.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\allocators.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\cursorstreamwrapper.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\document.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\encodedstream.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\encodings.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\error\en.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\error\error.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\filereadstream.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\filewritestream.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\fwd.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\biginteger.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\diyfp.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\dtoa.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\ieee754.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\itoa.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\meta.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\pow10.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\regex.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\stack.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\strfunc.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\strtod.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\internal\swap.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\istreamwrapper.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\memorybuffer.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\memorystream.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\msinttypes\inttypes.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\msinttypes\stdint.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\ostreamwrapper.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\pointer.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\prettywriter.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\rapidjson.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\reader.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\schema.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\stream.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\stringbuffer.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidjson\writer.h">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidxml\rapidxml.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidxml\rapidxml_iterators.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidxml\rapidxml_print.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidxml\rapidxml_utils.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\macros.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\specialize.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\array.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\atomic.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\base_class.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\bitset.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\boost_variant.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\chrono.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\common.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\complex.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\concepts\pair_associative_container.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\deque.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\forward_list.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\functional.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\list.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\map.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\memory.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\optional.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\polymorphic.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\queue.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\set.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\stack.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\string.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\tuple.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\unordered_map.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\unordered_set.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\utility.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\valarray.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\variant.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\types\vector.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\version.hpp">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\cereal-1.3.2\include\cereal\external\rapidxml\manual.html">
+      <Filter>Archivos de recursos\Cereal</Filter>
+    </None>
   </ItemGroup>
 </Project>
