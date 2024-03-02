@@ -232,7 +232,15 @@ void menu::run() {
 							rlutil::setColor(rlutil::color::WHITE);
 							rlutil::locate(18, 13 + i);
 							getline(cin, AgregarLibro);
-						} while (validarVacio(AgregarLibro) or !ll.checkbyID(AgregarLibro));
+						} while (validarVacio(AgregarLibro) or !ll.checkbyID(AgregarLibro) or ll.getbyID(AgregarLibro)->isPrestado());
+
+						l = ll.getbyID(AgregarLibro);
+						Libro* temp;
+						temp = l;
+
+						temp->setPrestamo("1");
+
+						ll.update(l, temp);
 
 						auxLibros = auxLibros + "/" + AgregarLibro;
 
