@@ -212,6 +212,7 @@ void menu::run() {
 				}
 				auxLibros = "";
 
+				rlutil::hidecursor();
 				rlutil::locate(15, 30);
 				system("pause");
 				system("cls");
@@ -277,6 +278,7 @@ void menu::run() {
 					getline(cin, Fecha);
 				} while (validarVacio(Fecha));
 
+				rlutil::hidecursor();
 				rlutil::locate(15, 30);
 				system("pause");
 				system("cls");
@@ -284,9 +286,16 @@ void menu::run() {
 			case 3:
 				system("cls");
 				rlutil::showcursor();
+				rlutil::locate(15, 3);
+				cout << ez1 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez2;
+				rlutil::locate(15, 4);
+				cout << ver << " Estos son todos Los Usuarios y Libros " << ver;
+				rlutil::locate(15, 5);
+				cout << ez3 << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << rec << ez4;
+				rlutil::locate(15, 6);
 
 
-
+				rlutil::hidecursor();
 				rlutil::locate(15, 30);
 				system("pause");
 				system("cls");
@@ -311,6 +320,7 @@ void menu::run() {
 				rlutil::locate(45, 3);
 				cout << "  " << endl;
 
+				rlutil::hidecursor();
 				rlutil::locate(15, 30);
 				system("pause");
 				system("cls");
